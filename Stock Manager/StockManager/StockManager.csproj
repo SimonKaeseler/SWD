@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Portfolio.cs" />
     <Compile Include="Stock.cs" />
+    <Compile Include="StockValue.cs" />
     <Compile Include="Subject.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
