@@ -1,0 +1,1 @@
+E:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.exe.config
