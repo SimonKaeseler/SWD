@@ -1,15 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Documents;
 
 namespace StockManager
 {
-    public class Portfolio
+    public class Portfolio : ObservableCollection<Stock>
     {
-        private List<Stock> _myStockList;
-
         public Portfolio()
         {
-            _myStockList = new List<Stock>();
+            
+        }
+
+        public void AddStock(Stock newStock, double initialPrice)
+        {
+            Add(new Stock(newStock.Name));
         }
     }
 }

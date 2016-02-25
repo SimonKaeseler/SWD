@@ -23,6 +23,7 @@ namespace StockManager
         public MainWindow()
         {
             InitializeComponent();
+            Portfolio portfolio = new Portfolio();
         }
     }
 }

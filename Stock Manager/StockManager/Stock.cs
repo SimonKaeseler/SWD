@@ -4,23 +4,25 @@ namespace StockManager
     {
         public string Name { get; set; }
         public double Price { get; set; }
-        public uint Amount { get; set; }
-        private  StockValue _stockValue;
+        public uint Amount = 0;
+        private StockValue _stockValue;
 
-        public Stock()
+        public Stock(StockValue stockValue)
         {
-            _stockValue = new StockValue();
-           
-
+            this._stockValue = stockValue;
+            this.Name = stockValue.Name;
+            this.Price = stockValue.Price;
+            stockValue.Attach(this);
         }
+
         /// <summary>
         /// When ever a StockValue is updated and it notifies, this is called to pull new info
         /// </summary>
         public void Update()
         {
-            Name = _stockValue.name;
-            Price = _stockValue.price;
-            Amount = _stockValue.amount;
+            Name = _stockValue.Name;
+            Price = _stockValue.Price;
+            Amount++;
         }
     }
 }
