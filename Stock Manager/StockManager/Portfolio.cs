@@ -6,8 +6,6 @@ namespace StockManager
 {
     public class Portfolio : ObservableCollection<Stock>
     {
-        public Portfolio()
-        {
-        }
+
     }
 }

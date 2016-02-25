@@ -26,7 +26,7 @@ namespace StockManager
         {
             InitializeComponent();
             _portfolio = new Portfolio();
-            listBox.ItemsSource = _portfolio;
+            StockDisplay.ItemsSource = _portfolio;
 
             StockValue SimonsASS = new StockValue("Simon A/S");
             Stock YoStock = new Stock(SimonsASS);
