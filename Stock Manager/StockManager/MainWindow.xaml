@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StockManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="StockManager" Height="350" Width="525">
+    <Window.Resources>
+        <local:Portfolio x:Key="Portfolio"></local:Portfolio>
+    </Window.Resources>
     
-    <Grid>
-        
+    <Grid DataContext="{StaticResource Portfolio}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <ListBox x:Name="StockDisplay" Grid.Row="0" ItemsSource="{Binding PresentationTraceSources.TraceLevel=High}"></ListBox>
+        </StackPanel>
     </Grid>
    
 </Window>
