@@ -35,5 +35,13 @@ namespace StockManager
 
             SimonsASS.Price = 50;
         }
+
+        private void AddNewStock_Click(object sender, RoutedEventArgs e)
+        {
+            Window win2 = new Window();
+            
+            win2.Show();
+            
+        }
     }
 }
