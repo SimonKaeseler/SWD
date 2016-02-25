@@ -20,10 +20,20 @@ namespace StockManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly Portfolio _portfolio;
+
         public MainWindow()
         {
             InitializeComponent();
-            Portfolio portfolio = new Portfolio();
+            _portfolio = new Portfolio();
+            listBox.ItemsSource = _portfolio;
+
+            StockValue SimonsASS = new StockValue("Simon A/S");
+            Stock YoStock = new Stock(SimonsASS);
+
+            _portfolio.Add(YoStock);
+
+            SimonsASS.Price = 50;
         }
     }
 }
