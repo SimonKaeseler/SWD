@@ -1,1 +1,2 @@
 E:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.exe.config
+C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\bin\Debug\StockManager.exe.config
