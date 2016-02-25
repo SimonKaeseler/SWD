@@ -5,7 +5,7 @@ namespace StockManager
         public string Name { get; set; }
         public double Price { get; set; }
         public uint Amount = 0;
-        private StockValue _stockValue;
+        private readonly StockValue _stockValue;
 
         public Stock(StockValue stockValue)
         {
@@ -23,6 +23,11 @@ namespace StockManager
             Name = _stockValue.Name;
             Price = _stockValue.Price;
             Amount++;
+        }
+
+        public override string ToString()
+        {
+            return Amount + "x " + Name + ": " + Price;
         }
     }
 }
