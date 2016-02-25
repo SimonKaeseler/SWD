@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IntervalRNGStockValueUpdater.cs" />
+    <Compile Include="IStockValueUpdater.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="Stock.cs" />
     <Compile Include="StockValue.cs" />
