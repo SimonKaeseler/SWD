@@ -1,4 +1,4 @@
-﻿namespace StockManager
+namespace StockManager
 {
     public class Stock : IObserver
     {
@@ -22,13 +22,5 @@
             Price = _stockValue.price;
             Amount = _stockValue.amount;
         }
-    }
-
-    public class StockValue
-    {
-        public string name = "";
-        public double price = 0;
-        public uint amount = 0;
-
     }
 }
