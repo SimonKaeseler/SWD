@@ -7,16 +7,18 @@
         mc:Ignorable="d"
         Title="StockManager" Height="350" Width="525">
     <Window.Resources>
-        <local:Portfolio x:Key="Portfolio"></local:Portfolio>
+        <local:App x:Key="Stocks"></local:App>
     </Window.Resources>
-    
-    <Grid DataContext="{StaticResource Portfolio}">
+
+    <Grid DataContext="{StaticResource Stocks}">
         <Grid.RowDefinitions>
             <RowDefinition Height="11*"/>
             <RowDefinition Height="18*"/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <ListBox x:Name="StockDisplay" Grid.Row="0" ItemsSource="{Binding PresentationTraceSources.TraceLevel=High}"></ListBox>
+            <ListBox x:Name="StockDisplay" Grid.Row="0" 
+                     ItemsSource="{Binding PresentationTraceSources.TraceLevel=High}"
+                     Grid.RowSpan="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=RowDefinitions.Count, Mode=OneWay}" ></ListBox>
         </StackPanel>
     </Grid>
    

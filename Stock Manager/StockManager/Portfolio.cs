@@ -10,10 +10,5 @@ namespace StockManager
         {
             
         }
-
-        public void AddStock(Stock newStock, double initialPrice)
-        {
-            Add(new Stock(newStock.Name));
-        }
     }
 }

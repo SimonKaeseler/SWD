@@ -1,1 +1,15 @@
 E:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.exe.config
+E:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.exe
+E:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.pdb
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.csprojResolveAssemblyReference.cache
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\MainWindow.g.cs
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\App.g.cs
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager_MarkupCompile.cache
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager_MarkupCompile.lref
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\MainWindow.baml
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.g.resources
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.Properties.Resources.resources
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.csproj.GenerateResource.Cache
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.exe
+E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.pdb
