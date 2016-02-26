@@ -8,5 +8,7 @@ namespace StockManager
 {
     public interface IStockBroker
     {
+        void Start();
+        void Stop();
     }
 }

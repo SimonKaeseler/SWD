@@ -29,9 +29,9 @@ namespace StockManager
             StockDisplay.ItemsSource = _portfolio;
 
             StockValue SimonsASS = new StockValue("Simon A/S");
-            Stock YoStock = new Stock(SimonsASS);
+            Stock simonStock = new Stock(SimonsASS);
 
-            _portfolio.Add(YoStock);
+            _portfolio.Add(simonStock);
 
             SimonsASS.Price = 50;
         }
@@ -42,6 +42,18 @@ namespace StockManager
             newStockValue.Price = Convert.ToDouble(StockPriceBox.Text);
             Stock newStock = new Stock(newStockValue);
             
+            newStockValue.Notify();
+
+            foreach (var stock in _portfolio)
+            {
+                if (StockNameBox.Text == stock.Name)
+                {
+                    stock.Amount++;
+                    newStockValue.Notify();
+                    return;
+                }
+                    
+            }
             _portfolio.Add(newStock);
         }
     }
