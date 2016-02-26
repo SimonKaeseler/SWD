@@ -38,8 +38,11 @@ namespace StockManager
 
         private void AddNewStock_Click(object sender, RoutedEventArgs e)
         {
-          
+            StockValue newStockValue = new StockValue(StockNameBox.Text);
+            newStockValue.Price = Convert.ToDouble(StockPriceBox.Text);
+            Stock newStock = new Stock(newStockValue);
             
+            _portfolio.Add(newStock);
         }
     }
 }

@@ -27,5 +27,3 @@ C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\MainW
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\StockManager.g.resources
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\StockManager.Properties.Resources.resources
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\StockManager.csproj.GenerateResource.Cache
-E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\AddStockWindow.g.cs
-E:\GIT\SWD\Stock Manager\StockManager\obj\Debug\AddStockWindow.baml
