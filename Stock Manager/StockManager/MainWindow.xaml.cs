@@ -73,7 +73,6 @@ namespace StockManager
         {
             if (StockMarketDisplay.SelectedValue != null)
             {
-                
                 var tempStockValue = new StockValue(StockMarketDisplay.SelectedValue.ToString());
                 var tempStock = new Stock(tempStockValue);
 
@@ -86,6 +85,8 @@ namespace StockManager
                     }
                    
                 }
+
+               
                 _portfolio.Add(tempStock);
             }
             else
