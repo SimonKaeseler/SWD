@@ -8,9 +8,4 @@ namespace StockManager
     {
 
     }
-
-    public class StockMarket : ObservableCollection<Stock>
-    {
-        
-    }
 }

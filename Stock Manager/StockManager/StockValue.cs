@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using StockManager.Annotations;
 
 namespace StockManager
 {
-    public class StockValue : Subject
+    public class StockValue : Subject, INotifyPropertyChanged
     {
         public string Name { get; private set; }
 
@@ -23,6 +26,7 @@ namespace StockManager
                 {
                     _price = value;
                     Notify();
+                    OnPropertyChanged("Price");
                 }
             }
         }
@@ -30,6 +34,14 @@ namespace StockManager
         public StockValue(string name)
         {
             Name = name;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
