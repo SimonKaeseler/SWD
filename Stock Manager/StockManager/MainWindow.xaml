@@ -17,7 +17,16 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <ListBox x:Name="StockDisplay" Grid.Row="0" 
-                     ItemsSource="{Binding PresentationTraceSources.TraceLevel=High}">
+                     ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Amount}" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding Path=Name}" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding Path=Price}" Margin="0,0,5,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
         <StackPanel x:Name="Inputs" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2">

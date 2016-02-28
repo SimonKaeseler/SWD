@@ -1,10 +1,25 @@
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using StockManager.Annotations;
+
 namespace StockManager
 {
-    public class Stock : IObserver
+    public class Stock : IObserver, INotifyPropertyChanged
     {
         public string Name { get; set; }
         public double Price { get; set; }
-        public uint Amount = 0;
+        
+        private uint _amount;
+        public uint Amount
+        {
+            get { return _amount; }
+            set
+            {
+                _amount = value;
+                OnPropertyChanged("Amount");
+            }
+        }
+
         private readonly StockValue _stockValue;
 
         public Stock(StockValue stockValue)
@@ -22,12 +37,21 @@ namespace StockManager
         {
             Name = _stockValue.Name;
             Price = _stockValue.Price;
-            Amount++;
+            OnPropertyChanged("Price");
+            OnPropertyChanged("Name");
         }
 
         public override string ToString()
         {
             return Amount + "x " + Name + ": " + Price;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -20,7 +20,6 @@ C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\bin\Debug\Stock
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\StockManager.csprojResolveAssemblyReference.cache
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\MainWindow.g.cs
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\App.g.cs
-C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\StockManager_MarkupCompile.cache
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\StockManager_MarkupCompile.lref
 C:\Users\sunel_000\Desktop\SWD\Stocks\Stock Manager\StockManager\obj\Debug\MainWindow.baml

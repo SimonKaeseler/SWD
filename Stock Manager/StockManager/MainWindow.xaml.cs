@@ -21,19 +21,23 @@ namespace StockManager
     public partial class MainWindow : Window
     {
         private readonly Portfolio _portfolio;
+        private IStockBroker sb;
 
         public MainWindow()
         {
             InitializeComponent();
             _portfolio = new Portfolio();
-            StockDisplay.ItemsSource = _portfolio;
+            this.DataContext = _portfolio;
+            //StockDisplay.ItemsSource = _portfolio;
 
             StockValue SimonsASS = new StockValue("Simon A/S");
             Stock simonStock = new Stock(SimonsASS);
+            sb = new StockBroker(SimonsASS);
 
             _portfolio.Add(simonStock);
 
             SimonsASS.Price = 50;
+            simonStock.Amount = 2;
         }
 
         private void AddNewStock_Click(object sender, RoutedEventArgs e)
@@ -41,19 +45,8 @@ namespace StockManager
             StockValue newStockValue = new StockValue(StockNameBox.Text);
             newStockValue.Price = Convert.ToDouble(StockPriceBox.Text);
             Stock newStock = new Stock(newStockValue);
-            
-            newStockValue.Notify();
 
-            foreach (var stock in _portfolio)
-            {
-                if (StockNameBox.Text == stock.Name)
-                {
-                    stock.Amount++;
-                    newStockValue.Notify();
-                    return;
-                }
-                    
-            }
+            new StockBroker(newStockValue);
             _portfolio.Add(newStock);
         }
     }
