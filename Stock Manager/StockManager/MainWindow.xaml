@@ -5,19 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StockManager"
         mc:Ignorable="d"
-        Title="StockManager" Height="350" Width="525">
+        Title="StockManager" Height="375" Width="525" WindowStyle="ToolWindow">
+    <!--<Window.Background>
+        <ImageBrush ImageSource="/stockmgBG.jpg"/>
+    </Window.Background>-->
     <Window.Resources>
     </Window.Resources>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="121*"/>
-            <RowDefinition Height="76*"/>
-            <RowDefinition Height="122*"/>
-        </Grid.RowDefinitions>
-        <StackPanel>
-            <ListBox x:Name="StockDisplay" Grid.Row="0" 
-                     ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="263*"/>
+            <ColumnDefinition Width="261*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.ColumnSpan="1" Margin="0,0,0,112" Grid.RowSpan="2" >
+            <TextBlock x:Name="Portfolio" Text="Portfolio" HorizontalAlignment="Center"></TextBlock>
+            <ListBox x:Name="PortfolioDisplay" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="207" Margin="5,0" Panel.ZIndex="-1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -29,16 +32,44 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
-        <StackPanel x:Name="Inputs" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2">
-            <TextBlock x:Name="NameBlock" Text="Stock Name"></TextBlock>
-            <TextBox x:Name ="StockNameBox" HorizontalAlignment="Stretch" ></TextBox>
-            <TextBlock x:Name="PriceBlock" Text="Stock Price"></TextBlock>
-            <TextBox x:Name ="StockPriceBox" HorizontalAlignment="Stretch" ></TextBox>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <TextBlock x:Name="StockMarket" Text="Stock Market" HorizontalAlignment="Center"></TextBlock>
+            <ListBox x:Name="StockMarketDisplay" Grid.Row="0" 
+                     ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="207" Margin="5,0" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Name}" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding Path=Price}" Margin="0,0,5,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.RowSpan="2">
-            <Button x:Name="AddNewStock" Height="25"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Add New Stock"  Margin="0,10,0,0" Click="AddNewStock_Click" ></Button>
+
+        <StackPanel Orientation="Vertical" Grid.ColumnSpan="2" Background="DarkGray" Margin="0,233,0,0" >
+            <StackPanel Orientation="Horizontal" Height="37">
+                <TextBlock x:Name="Amount" Text="Additional Amount"  Height="25"></TextBlock>
+                <TextBox x:Name="AmountInput" Height="25" Width="50" Margin="10,5,10,0" ></TextBox>
+                <Button x:Name ="BuyStockBtn"  Content="Buy Selected Stock" Margin="0,8,0,3" Height="25" Padding="1" Click="BuyStockBtn_Click" Width="342" ></Button>
+            </StackPanel>
+            <Button x:Name="SellStockBtn" Height="25" Content="Sell selected stock" Margin="5,10,5,0" Click="SellStockBtn_Click"></Button>
+            <Button x:Name ="NewMarketStockBtn"  Content="Add new stock to market" Margin="5,10,5,0" Height="25" Padding="1" Click="NewMarketStockBtn_Click"></Button>
         </StackPanel>
+        <Grid x:Name="AddNewStockToMarketBox" Visibility="Collapsed" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+              MinWidth="110" Width="200">
+            <Grid Background="Black" Opacity="0.5"/>
+            <Border Background="DarkGray" BorderBrush="Black"></Border>
+            <StackPanel x:Name="Inputs" Orientation="Vertical" >
+                <TextBlock x:Name="NameBlock" Text="Stock Name" Margin="5,0,5,0"></TextBlock>
+                <TextBox x:Name ="StockNameBox" HorizontalAlignment="Stretch" Margin="5,0,5,0"></TextBox>
+                <TextBlock x:Name="PriceBlock" Text="Stock Price" Margin="5,0,5,0"></TextBlock>
+                <TextBox x:Name ="StockPriceBox" HorizontalAlignment="Stretch" Margin="5,0,5,0"></TextBox>
+                <Button x:Name ="PopUpAddBtn" Content="Add" Click="PopUpAddBtn_Click"></Button>
+                <Button x:Name="PopUpCancelBtn" Content="Cancel" Click="PopUpCancelBtn_Click"></Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 
 </Window>

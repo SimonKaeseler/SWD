@@ -43,7 +43,7 @@ namespace StockManager
 
         public override string ToString()
         {
-            return Amount + "x " + Name + ": " + Price;
+            return Name + ": " + Price;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
