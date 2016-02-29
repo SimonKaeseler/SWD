@@ -21,7 +21,7 @@ namespace StockManager
     public partial class MainWindow : Window
     {
         private  Portfolio _portfolio;
-        private  StockMarket _stockMarket;
+        private  List<StockValue> _stockMarket;
         private IStockBroker sb;
 
         public MainWindow()
@@ -51,10 +51,8 @@ namespace StockManager
                     newStockValue.Price = 0;
                 }
 
-                Stock newStock = new Stock(newStockValue);
-
                 new StockBroker(newStockValue);
-                _stockMarket.Add(newStock);
+                _stockMarket.Add(newStockValue);
                 AddNewStockToMarketBox.Visibility = System.Windows.Visibility.Hidden;
             }
             else
@@ -73,21 +71,21 @@ namespace StockManager
         {
             if (StockMarketDisplay.SelectedValue != null)
             {
-                var tempStockValue = new StockValue(StockMarketDisplay.SelectedValue.ToString());
-                var tempStock = new Stock(tempStockValue);
+                var tempStockValue = _stockMarket[StockMarketDisplay.SelectedIndex];
 
-                foreach (var stock in _portfolio)
+                for (int i = 0; i < _portfolio.Count; i++)
                 {
-                    if (stock.Name == tempStock.Name)
+                    if (_portfolio[i].Name == tempStockValue.Name)
                     {
-                        stock.Amount = 1 + tempStock.Amount + Convert.ToUInt32(AmountInput.Text);
+                        _portfolio[i].Amount += uint.Parse(AmountInput.Text);
                         return;
                     }
-                   
                 }
 
-               
-                _portfolio.Add(tempStock);
+                var newStock = new Stock(tempStockValue);
+                newStock.Amount = uint.Parse(AmountInput.Text);
+
+                _portfolio.Add(newStock);
             }
             else
             {
@@ -98,41 +96,34 @@ namespace StockManager
         public void InitializeContent()
         {
             _portfolio = new Portfolio();
-            _stockMarket = new StockMarket();
+            _stockMarket = new List<StockValue>();
             PortfolioDisplay.DataContext = _portfolio;
             StockMarketDisplay.DataContext = _stockMarket;
       
             StockValue GoogleStock = new StockValue("Google");
-            Stock googleStock = new Stock(GoogleStock);
             sb = new StockBroker(GoogleStock);
             GoogleStock.Price = 100000;
-            googleStock.Amount = 2;
-            _stockMarket.Add(googleStock);
+            _stockMarket.Add(GoogleStock);
 
             StockValue FacebookStock = new StockValue("Facebook");
-            Stock fbStock = new Stock(FacebookStock);
             sb = new StockBroker(FacebookStock);
             FacebookStock.Price = 5000;
-            _stockMarket.Add(fbStock);
+            _stockMarket.Add(FacebookStock);
 
             StockValue VestasStock = new StockValue("Vestas");
-            Stock vestasStock = new Stock(VestasStock);
             sb = new StockBroker(VestasStock);
             VestasStock.Price = 500;
-            _stockMarket.Add(vestasStock);
+            _stockMarket.Add(VestasStock);
 
             StockValue Microsoft = new StockValue("Microsoft");
-            Stock msStock = new Stock(Microsoft);
             sb = new StockBroker(Microsoft);
             Microsoft.Price = 500;
-            _stockMarket.Add(msStock);
-
+            _stockMarket.Add(Microsoft);
 
             StockValue mcDonalds = new StockValue("MC Donalds");
-            Stock mcdStock = new Stock(mcDonalds);
             sb = new StockBroker(mcDonalds);
             mcDonalds.Price = 500;
-            _stockMarket.Add(mcdStock);
+            _stockMarket.Add(mcDonalds);
             
         }
 
