@@ -40,3 +40,17 @@ C:\Users\sunel_000\Desktop\Stock Manager\StockManager\obj\Debug\MainWindow.baml
 C:\Users\sunel_000\Desktop\Stock Manager\StockManager\obj\Debug\StockManager.g.resources
 C:\Users\sunel_000\Desktop\Stock Manager\StockManager\obj\Debug\StockManager.Properties.Resources.resources
 C:\Users\sunel_000\Desktop\Stock Manager\StockManager\obj\Debug\StockManager.csproj.GenerateResource.Cache
+C:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.exe.config
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.exe
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.pdb
+C:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.exe
+C:\GIT\SWD\Stock Manager\StockManager\bin\Debug\StockManager.pdb
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.csprojResolveAssemblyReference.cache
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\MainWindow.g.cs
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\App.g.cs
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager_MarkupCompile.cache
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager_MarkupCompile.lref
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\MainWindow.baml
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.g.resources
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.Properties.Resources.resources
+C:\GIT\SWD\Stock Manager\StockManager\obj\Debug\StockManager.csproj.GenerateResource.Cache

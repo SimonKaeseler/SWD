@@ -69,27 +69,34 @@ namespace StockManager
 
         private void BuyStockBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (StockMarketDisplay.SelectedValue != null)
+            if (AmountInput.Text != "")
             {
-                var tempStockValue = _stockMarket[StockMarketDisplay.SelectedIndex];
-
-                for (int i = 0; i < _portfolio.Count; i++)
+                if (StockMarketDisplay.SelectedValue != null)
                 {
-                    if (_portfolio[i].Name == tempStockValue.Name)
+                    var tempStockValue = _stockMarket[StockMarketDisplay.SelectedIndex];
+
+                    for (int i = 0; i < _portfolio.Count; i++)
                     {
-                        _portfolio[i].Amount += uint.Parse(AmountInput.Text);
-                        return;
+                        if (_portfolio[i].Name == tempStockValue.Name)
+                        {
+                            _portfolio[i].Amount += uint.Parse(AmountInput.Text);
+                            return;
+                        }
                     }
+
+                    var newStock = new Stock(tempStockValue);
+                    newStock.Amount = uint.Parse(AmountInput.Text);
+
+                    _portfolio.Add(newStock);
                 }
-
-                var newStock = new Stock(tempStockValue);
-                newStock.Amount = uint.Parse(AmountInput.Text);
-
-                _portfolio.Add(newStock);
+                else
+                {
+                    MessageBox.Show("Please select a stock");
+                }
             }
             else
             {
-                MessageBox.Show("Please select a stock");
+                MessageBox.Show("Please enter amount");
             }
         }
 
